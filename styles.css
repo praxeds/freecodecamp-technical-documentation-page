@@ -1,4 +1,183 @@
+/*
+! variable declarations
+*/
+
+html {
+    --background_color: rgb(10, 10, 10);
+    --font_color: white;
+}
+
+/*
+! scrollbar
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #bbbbbb;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+/*
+! styles
+*/
+
 *:not(code) {
     box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+html {
+    background-color: var(--background_color);
+    color: var(--font_color);
+    font-size: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font_color);
+}
+
+div.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/*
+
+
+
+* main text
+
+
+
+*/
+
+#main-doc {
+    flex-grow:4;
+    flex-shrink: 1;
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 5vw;
+}
+
+section.main-section {
+    margin-bottom: 5vw;
+}
+
+section > header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main-section > *:not(code) {
+    word-spacing: 0.2rem;
+    line-height: 1.5rem;
+}
+
+code {
+    display: block;
+    text-indent: 1.5rem;
+    margin: 2rem 0;
+}
+
+#reference a {
+    color:rgb(0, 140, 255)
+}
+
+/*
+
+
+
+* navbar
+
+
+
+*/
+
+#navbar {
+    flex-grow: 2;
+    flex-shrink: 0;
+    border-right: 0.2rem solid rgb(139, 139, 139);
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#navbar header {
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 1.2rem;
+}
+
+#navbar ul {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    list-style: none;
+    border-top: 0.1rem solid white;
+}
+
+#navbar a {
+    display: block;
+    padding: 1rem 2em;
+}
+
+
+/*
+! @media
+*/
+
+@media (max-width: 768px) {
+    div.container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    #navbar {
+        width: 100vw;
+    }
+
+    #navbar header {
+        font-size: 1.4rem;
+    }
+
+    #navbar ul {
+        height: 35vh;
+        border: 0.1rem solid white;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    #main-doc {
+        overflow: initial;
+        padding: 2rem 2.5rem;
+    }
 }
